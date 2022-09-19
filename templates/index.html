@@ -9,13 +9,28 @@
 
 <body>
 <div class="flex flex-col h-screen justify-between">
-  <header class="h-10 bg-red-500">Header</header>
-  <main class="mb-auto h-10 bg-green-500">Content</main>
-  <footer class="h-96">
-      <img src="{{url_for('static',filename='media/BG.png')}}" alt="Background image">
-  </footer>
-</div>
 
+    <main class="h-full mt-12 text-center">
+        <img class="w-[446px] h-auto inline absolute mx-auto left-0 right-0 z-0" src="{{url_for('static',filename='media/circle.png')}}" alt="DDLanding - circle">
+        <button class=" w-72 h-72 rounded-full bg-shade-of-red hover:bg-red-500 text-white font-bold absolute h-auto mx-auto z-30 mt-32 -translate-x-6">Button</button>
+        <img class="w-[401px] h-auto mt-24 inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/tree.png')}}" alt="DDLanding - tree">
+        <img class="w-[232px] h-auto mt-[543px] z-10 inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/ddl-logo.png')}}" alt="DDLanding - DDL logo">
+    </main>
+
+    <footer class="relative">
+        <img class="w-full" src="{{url_for('static',filename='media/bg.png')}}" alt="Background image">
+        <div class="absolute bottom-0 w-full h-20 border-t-2 text-center border-duron-mindful-gray bg-transparent">
+            <div class="mt-3 divide-x-2 divide-duron-mindful-gray">
+                <a href="https://cw4wafghan.ca" target="_blank">
+                    <img class="h-14 w-48 inline mr-2" src="{{url_for('static',filename='media/cw4wafghan-logo.png')}}" alt="CW4WAfghan logo">
+                </a>
+                <div class="inline-block">
+                    <span class="ml-2 font-sans text-xl"><a href="https://cw4wafghan.ca" target="_blank">cw4wafghan.ca</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 </body>
 
 </html>
