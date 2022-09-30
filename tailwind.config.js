@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         'duron-mindful-gray': '#c8bfb6',
         'shade-of-red': '#aa6562',
+        'shade-of-orange': '#e66019',
       },
     },
   },
