@@ -8,30 +8,48 @@
 </head>
 
 <body>
-<div class="flex flex-col 2xl:h-screen invisible md:visible">
+    <header class="md:hidden block bg-duron-mindful-gray py-2 text-center mb-8">
+        <span class="font-sans text-xl"><a href="#">Darakht-e Danesh Academi</a></span>
+    </header>
+    <main class="md:hidden flex flex-col bg-academi-tree h-screen bg-no-repeat bg-top bg-contain">
 
-    <main class="relative h-[800px] mt-[15px] 2xl:mt-[75px] text-center">
-        <img class="w-[388px] h-auto inline z-0" src="{{url_for('static',filename='media/circle.png')}}" alt="DDLanding - circle">
-        <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-[230px] z-30 mt-[150px]">DD Library</button>
-        <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-0 z-30 mt-[100px]">DD Courses</button>
-        <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-[230px] right-0 z-30 mt-[150px]">DD Classroom</button>
-        <img class="w-[360px] h-auto mt-[100px] inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/ddl-logo-tree.png')}}" alt="DDLanding - tree">
+        <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white">DD Library</button></div>
+        <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white">DD Courses</button></div>
+        <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white">DD Classroom</button></div>
+        <div class="bg-academi-tree bg-gradient-to-br"></div>
     </main>
-
-    <footer>
-        <img class="inline" src="{{url_for('static',filename='media/bg.png')}}" alt="Background image" style="min-height: 250px;">
-        <div class="-mt-16 border-t-2 text-center border-duron-mindful-gray">
-            <div class="mt-1 mb-1 divide-x-2 divide-duron-mindful-gray">
+    <footer class="md:hidden">
+        <div class="-mt-16 border-t-2 text-center border-duron-mindful-gray bg-very-light-shade-of-orange">
+            <div class="mt-1 mb-1">
                 <a href="https://cw4wafghan.ca" target="_blank">
                     <img class="h-14 w-48 inline mr-2" src="{{url_for('static',filename='media/cw4wafghan-logo.png')}}" alt="CW4WAfghan logo">
                 </a>
-                <div class="inline-block bottom-0">
-                    <span class="ml-2 font-sans text-xl"><a href="https://cw4wafghan.ca" target="_blank">cw4wafghan.ca</a></span>
-                </div>
             </div>
         </div>
     </footer>
-</div>
+    <div class="hidden md:flex flex-col 2xl:h-screen">
+        <main class="relative h-[800px] mt-[15px] 2xl:mt-[75px] text-center">
+            <img class="w-[388px] h-auto inline z-0" src="{{url_for('static',filename='media/circle.png')}}" alt="DDLanding - circle">
+            <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-[230px] z-30 mt-[150px]">DD Library</button>
+            <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-0 z-30 mt-[100px]">DD Courses</button>
+            <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-[230px] right-0 z-30 mt-[150px]">DD Classroom</button>
+            <img class="w-[360px] h-auto mt-[100px] inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/ddl-logo-tree.png')}}" alt="DDLanding - tree">
+        </main>
+
+        <footer>
+            <img class="inline" src="{{url_for('static',filename='media/bg.png')}}" alt="Background image" style="min-height: 250px;">
+            <div class="-mt-16 border-t-2 text-center border-duron-mindful-gray">
+                <div class="mt-1 mb-1 divide-x-2 divide-duron-mindful-gray">
+                    <a href="https://cw4wafghan.ca" target="_blank">
+                        <img class="h-14 w-48 inline mr-2" src="{{url_for('static',filename='media/cw4wafghan-logo.png')}}" alt="CW4WAfghan logo">
+                    </a>
+                    <div class="inline-block bottom-0">
+                        <span class="ml-2 font-sans text-xl"><a href="#">Darakht-e Danesh Academi</a></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
