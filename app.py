@@ -3,6 +3,7 @@ from flask_babel import Babel
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
+app.config.from_prefixed_env()
 babel = Babel(app)
 
 
