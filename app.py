@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, g, session
+from flask.cli import load_dotenv
 from flask_babel import Babel
 
 app = Flask(__name__)
@@ -6,6 +7,7 @@ app.config.from_object('config.Config')
 app.config.from_prefixed_env()
 babel = Babel(app)
 
+load_dotenv()
 
 @app.route('/')
 def index():
