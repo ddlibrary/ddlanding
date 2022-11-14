@@ -9,6 +9,7 @@ app.config.from_object('config.Config')
 app.config.from_prefixed_env()
 babel = Babel(app)
 
+
 @app.route('/')
 def index():
     if 'lang' in session:
@@ -16,12 +17,18 @@ def index():
     return redirect(url_for('ddlanding', lang=get_locale()))
 
 
-@app.route('/<string:lang>')
+@app.route('/<path:lang>')
 def ddlanding(lang=None):
+    potential_query_string = None
     if lang and lang in app.config['LANGUAGES']:
         session['lang'] = lang
+    else:
+        potential_query_string = lang
+        potential_supported_lang = lang.split('/', 1)
+        if potential_supported_lang[0] in app.config['LANGUAGES']:
+            session['lang'] = potential_supported_lang[0]
     g.locale = get_locale()
-    return render_template('ddlanding.html')
+    return render_template('ddlanding.html', potential_query_string=potential_query_string)
 
 
 @babel.localeselector

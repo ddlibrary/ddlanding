@@ -34,9 +34,9 @@
             </div>
         </header>
         <main class="md:hidden bg-academi-tree h-screen bg-no-repeat bg-top bg-contain">
-            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white">{{ _("DD Library") }}</button></div>
-            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white">{{ _("DD Courses") }}</button></div>
-            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white">{{ _("DD Classroom") }}</button></div>
+            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://library.darakhtdanesh.org/{{ potential_query_string }}'" type="button">{{ _("DD Library") }}</button></div>
+            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org'" type="button">{{ _("DD Courses") }}</button></div>
+            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org/course/index.php?categoryid=7'" type="button">{{ _("DD Classroom") }}</button></div>
             <div class="bg-academi-tree bg-gradient-to-br"></div>
         </main>
         <footer class="md:hidden">
@@ -68,9 +68,9 @@
             </div>
             <main class="relative h-[800px] mt-[15px] 2xl:mt-[75px] text-center">
                 <img class="w-[388px] h-auto inline z-0" src="{{url_for('static',filename='media/circle.png')}}" alt="DDLanding - circle">
-                <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:left-0 ltr:right-[230px] rtl:right-0 rtl:left-[230px] z-30 mt-[150px]">{{ _("DD Library") }}</button>
-                <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-0 z-30 mt-[100px]">{{ _("DD Courses") }}</button>
-                <button class="w-[75px] h-[75px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:right-0 ltr:left-[230px] rtl:left-0 rtl:right-[230px] z-30 mt-[150px]">{{ _("DD Classroom") }}</button>
+                <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:left-0 ltr:right-[230px] rtl:right-0 rtl:left-[230px] z-30 mt-[150px]" onclick="location.href='https://library.darakhtdanesh.org/{{ potential_query_string }}'" type="button">{{ _("DD Library") }}</button>
+                <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-0 z-30 mt-[100px]" onclick="location.href='https://courses.darakhtdanesh.org'" type="button">{{ _("DD Courses") }}</button>
+                <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:right-0 ltr:left-[230px] rtl:left-0 rtl:right-[230px] z-30 mt-[150px]" onclick="location.href='https://courses.darakhtdanesh.org/course/index.php?categoryid=7'" type="button">{{ _("DD Classroom") }}</button>
                 <img class="w-[360px] h-auto mt-[100px] inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/ddl-logo-tree.png')}}" alt="DDLanding - tree">
             </main>
 

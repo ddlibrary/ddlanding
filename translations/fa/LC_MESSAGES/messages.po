@@ -20,19 +20,19 @@ msgstr ""
 
 #: templates/index.html:6 templates/index.html:12 templates/index.html:47
 msgid "Darakht-e Danesh Academi"
-msgstr "جستجوی مضامین"
+msgstr "اکادمی درخت دانش"
 
 #: templates/index.html:16 templates/index.html:33
 msgid "DD Library"
-msgstr ""
+msgstr "کتاب‌خانه‌ی درخت دانش"
 
 #: templates/index.html:17 templates/index.html:34
 msgid "DD Courses"
-msgstr ""
+msgstr "کورس‌های درخت دانش"
 
 #: templates/index.html:18 templates/index.html:35
 msgid "DD Classroom"
-msgstr ""
+msgstr "صنف‌های درخت دانش"
 
 #: venv/Lib/site-packages/click/_termui_impl.py:496
 msgid "{editor}: Editing failed"
