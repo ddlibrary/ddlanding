@@ -19,7 +19,7 @@ def index():
 
 @app.route('/<path:lang>')
 def ddlanding(lang=None):
-    potential_query_string = None
+    potential_query_string = ""
     if lang and lang in app.config['LANGUAGES']:
         session['lang'] = lang
     else:
