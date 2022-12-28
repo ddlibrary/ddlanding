@@ -12,6 +12,7 @@ module.exports = {
                 'different-shade-of-red': '#e2625cff',
                 'shade-of-orange': '#e66019',
                 'very-light-shade-of-orange': '#f0eae5',
+                'very-dark-shade-of-orange': '#772b02',
                 'shade-of-green': '#9fbd9a',
                 'shade-of-brown': '#796a58',
                 'different-shade-of-brown': '#574c40',
