@@ -6,13 +6,44 @@
         <title>{{ _("Darakht-e Danesh Academi") }}</title>
         <link rel="shortcut icon" href="{{url_for('static',filename='media/favicon.ico')}}" />
         <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"
-                integrity="bf1809e3c17d86667dd0b9e10bd809cbe7bb76979486c23b06eec1504bf3be19"
-                crossorigin="anonymous">
-        </script>
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" integrity="sha512-b4Yv1rMC70hhGkMFwgqiSrvxecsfKDY2fv26lXsLZD0TYpUobohhs6he69Kk4NpM0xvaFDVkBYcNFh5/QSuTAg==" crossorigin="anonymous"></script>
     </head>
 
     <body dir="{% if g.locale == 'en' %}ltr{% else %}rtl{% endif %}">
+        <!-- Main modal -->
+        <div id="defaultModal" tabindex="-1" aria-hidden="true" {% if intro_modal %}data-modal-show="true"{% endif %} class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+            <div class="relative w-full h-full max-w-2xl md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t bg-black">
+                        <h3 class="text-xl font-semibold text-white">
+                            {{ _("Introducing <a href=\"https://dararkhtdanesh.org/\" class=\"hover:text-duron-mindful-gray\"><u>Darakht-e Danesh Academi</u></a>") }}
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">{{ _("Close") }}</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                            {{ _("darakhtdanesh.org (ddl.af) has a new look. We've brought together our open educational resource collection
+                            <a href=\"https://library.darakhtdanesh.org/en\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Library</a>, our asynchronous course platform
+                            <a href=\"https:/courses.darakhtdanesh.org/\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Courses</a>, and our live teaching site
+                            <a href=\"https://classroom.darakhtdanesh.org\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Classroom</a> into a single landing page: <b>Darakht-e Danesh Academi</b>.
+                            You can access each of the individual sites by clicking on the corresponding red circle in the graphic.
+                            We are continuing to improve the site design!") }}
+                        </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                            {{ _("Close") }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <header class="md:hidden block flex justify-center items-center bg-duron-mindful-gray py-2 text-center mb-8">
             <div class="flex-1"></div>
             <span class="inline-block font-sans text-xl"><a href="#">{{ _("Darakht-e Danesh Academi") }}</a></span>
@@ -90,5 +121,4 @@
             </footer>
         </div>
     </body>
-
 </html>
