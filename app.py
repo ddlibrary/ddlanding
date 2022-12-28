@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, g, session
+import datetime
+
+from flask import Flask, render_template, request, redirect, url_for, g, session, make_response
 from flask.cli import load_dotenv
 from flask_babel import Babel
 
@@ -23,12 +25,20 @@ def ddlanding(lang=None):
     if lang and lang in app.config['LANGUAGES']:
         session['lang'] = lang
     else:
-        potential_query_string = lang
-        potential_supported_lang = lang.split('/', 1)
-        if potential_supported_lang[0] in app.config['LANGUAGES']:
-            session['lang'] = potential_supported_lang[0]
+        return redirect("https://library.darakhtdanesh.org/" + lang)
     g.locale = get_locale()
-    return render_template('ddlanding.html', potential_query_string=potential_query_string)
+    if request.cookies.get('has_read_intro'):
+        return render_template('ddlanding.html', potential_query_string=potential_query_string, intro_modal=False)
+    else:
+        response = make_response(render_template('ddlanding.html',
+                                                 potential_query_string=potential_query_string,
+                                                 intro_modal=True
+                                                 )
+                                 )
+        now = datetime.datetime.now()
+        expiry_date = now + datetime.timedelta(days=30)
+        response.set_cookie('has_read_intro', 'yes', expires=expiry_date)
+        return response
 
 
 @babel.localeselector
