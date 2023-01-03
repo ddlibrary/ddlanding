@@ -28,10 +28,11 @@ msgid ""
 "Introducing <a href=\"https://darakhtdanesh.org/\" class=\"hover:text-"
 "duron-mindful-gray\"><u>Darakht-e Danesh Academi</u></a>"
 msgstr ""
+"پیژندنه <a href=\"https://dararkhtdanesh.org/\" class=\"hover:text-duron-mindful-gray\"><u>درخت دانش اکادمي</u></a>"
 
 #: templates/ddlanding.html:25 templates/ddlanding.html:42
 msgid "Close"
-msgstr ""
+msgstr "تړل"
 
 #: templates/ddlanding.html:31
 msgid ""
@@ -53,6 +54,12 @@ msgid ""
 "by clicking on the corresponding red circle in the graphic.\n"
 "                            We are continuing to improve the site design!"
 msgstr ""
+"موږ darakhtdanesh.org (ddl.af) ته یوه نوی بڼه ورکړی ده او د خپلو پرانیستي ښوونیزو سرچینو ټولګه مو یو ځای کړی ده."
+"<a href=\"https://library.darakhtdanesh.org/en\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">د درخت دانش کتابتون</a>,  زموږ د پرانیستو ښوونیزو سرچینو پلیټ فارم"
+"<a href=\"https:/courses.darakhtdanesh.org/\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">د درخت دانش کورسونه</a>, and our live teaching site"
+"<a href=\"https://courses.darakhtdanesh.org/course/index.php?categoryid=7\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">د دخت دانش ټولګی</a> په یوه پاڼه کې راځي: <b>Darakht-e Danesh Academi</b>."
+"تاسو کولای شئ هر یوې انفرادي پاڼې ته په انځور کې د ورته سور رنګ حلقې په کلیک کولو سره لاسرسی ومومئ."
+"موږ د سایټ ډیزاین ته وده ورکولو ته دوام ورکوو!"
 
 #: templates/ddlanding.html:51
 msgid "Select language"
