@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+<main class="hidden md:flex justify-end h-[750px]">
+    <img src="{{url_for('static',filename='media/ddl-logo-tree-transparent-portal.png')}}" class="w-[27rem] opacity-50 ">
+    <div class="absolute -z-10 bg-gradient-to-t from-white via-white to-white h-[70vh] lg:h-[80vh] w-full"></div>
+    <div class="w-[50%] justify-center items-center">
+        <div class="font-bold text-xl mb-8">{{ _("Access courses from:") }}</div>
+        <a href="https://courses.darakhtdanesh.org/?lang={{ g.locale }}" class="button inline-block py-8 px-10 mr-2 mb-2 text-md text-white font-medium bg-different-shade-of-red rounded-lg hover:bg-shade-of-orange">{{ _("Canadian Women for Women in Afghanistan") }}</a><br>
+        <a href="{{url_for('oruj', lang=g.locale)}}" class="button inline-block py-8 px-10 mr-2 mb-2 text-md text-white font-medium bg-different-shade-of-red rounded-lg hover:bg-shade-of-orange">{{ _("Oruj University") }}</a>
+    </div>
+</main>
+<main class="md:hidden bg-academi-tree h-screen bg-no-repeat bg-top bg-contain bg-opacity-50">
+    <div class="font-bold text-xl mb-4 bg-white">{{ _("Access courses from:") }}</div>
+    <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org/?lang={{ g.locale }}'" type="button">{{ _("Canadian Women for Women in Afghanistan") }}</button></div>
+    <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://darakhtdanesh.org/ddcourses/oruj/{{ g.locale }}'" type="button">{{ _("Oruj University") }}</button></div>
+</main>
+{% include 'footer.html' %}
