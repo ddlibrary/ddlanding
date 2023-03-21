@@ -1,124 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ _("Darakht-e Danesh Academi") }}</title>
-        <link rel="shortcut icon" href="{{url_for('static',filename='media/favicon.ico')}}" />
-        <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" integrity="sha512-b4Yv1rMC70hhGkMFwgqiSrvxecsfKDY2fv26lXsLZD0TYpUobohhs6he69Kk4NpM0xvaFDVkBYcNFh5/QSuTAg==" crossorigin="anonymous"></script>
-    </head>
+{% include 'header.html' %}
 
-    <body dir="{% if g.locale == 'en' %}ltr{% else %}rtl{% endif %}">
-        <!-- Main modal -->
-        <div id="defaultModal" tabindex="-1" aria-hidden="true" {% if intro_modal %}data-modal-show="true"{% endif %} class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-            <div class="relative w-full h-full max-w-2xl md:h-auto">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <!-- Modal header -->
-                    <div class="flex items-start justify-between p-4 border-b rounded-t bg-black">
-                        <h3 class="text-xl font-semibold text-white">
-                            {{ _("Introducing <a href=\"https://darakhtdanesh.org/\" class=\"hover:text-duron-mindful-gray\"><u>Darakht-e Danesh Academi</u></a>") }}
-                        </h3>
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                            <span class="sr-only">{{ _("Close") }}</span>
-                        </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-6 space-y-6">
-                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                            {{ _("darakhtdanesh.org (ddl.af) has a new look. We've brought together our open educational resource collection
-                            <a href=\"https://library.darakhtdanesh.org/en\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Library</a>, our asynchronous course platform
-                            <a href=\"https:/courses.darakhtdanesh.org/\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Courses</a>, and our live teaching site
-                            <a href=\"https://courses.darakhtdanesh.org/course/index.php?categoryid=7\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Classroom</a> into a single landing page: <b>Darakht-e Danesh Academi</b>.
-                            You can access each of the individual sites by clicking on the corresponding red circle in the graphic.
-                            We are continuing to improve the site design!") }}
-                        </p>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                            {{ _("Close") }}</button>
-                    </div>
-                </div>
+<div id="defaultModal" tabindex="-1" aria-hidden="true" {% if intro_modal %}data-modal-show="true"{% endif %} class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+    <div class="relative w-full h-full max-w-2xl md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between p-4 border-b rounded-t bg-black">
+                <h3 class="text-xl font-semibold text-white">
+                    {{ _("Introducing <a href=\"https://darakhtdanesh.org/\" class=\"hover:text-duron-mindful-gray\"><u>Darakht-e Danesh Academi</u></a>") }}
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">{{ _("Close") }}</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    {{ _("darakhtdanesh.org (ddl.af) has a new look. We've brought together our open educational resource collection
+                    <a href=\"https://library.darakhtdanesh.org/en\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Library</a>, our asynchronous course platform
+                    <a href=\"https:/courses.darakhtdanesh.org/\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Courses</a>, and our live teaching site
+                    <a href=\"https://courses.darakhtdanesh.org/course/index.php?categoryid=7\" class=\"text-shade-of-orange hover:text-very-dark-shade-of-orange\">DD Classroom</a> into a single landing page: <b>Darakht-e Danesh Academi</b>.
+                    You can access each of the individual sites by clicking on the corresponding red circle in the graphic.
+                    We are continuing to improve the site design!") }}
+                </p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    {{ _("Close") }}</button>
             </div>
         </div>
-        <header class="md:hidden block flex justify-center items-center bg-duron-mindful-gray py-2 text-center mb-8">
-            <div class="flex-1"></div>
-            <span class="inline-block font-sans text-xl"><a href="#">{{ _("Darakht-e Danesh Academi") }}</a></span>
-            <div class="text-end inline-block flex-1">
-                <button id="dropdownMobileLanguage" data-dropdown-toggle="dropdown1" class="text-white bg-shade-of-brown hover:bg-different-shade-of-brown rounded-lg px-1 py-1 me-2" type="button"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" aria-describedby="{{ _("Select language") }}" aria-disabled="true" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg></button>
-            </div>
-            <!-- Dropdown menu -->
-            <div id="dropdown1" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
-                <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefault">
-                  <li class="{% if g.locale == 'en' %}hidden{% endif %}">
-                    <a href="{{ url_for('ddlanding', lang='en') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">English</a>
-                  </li>
-                  <li class="{% if g.locale == 'fa' %}hidden{% endif %}">
-                    <a href="{{ url_for('ddlanding', lang='fa') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">فارسی</a>
-                  </li>
-                  <li class="{% if g.locale == 'ps' %}hidden{% endif %}">
-                    <a href="{{ url_for('ddlanding', lang='ps') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">پښتو</a>
-                  </li>
-                </ul>
-            </div>
-        </header>
-        <main class="md:hidden bg-academi-tree h-screen bg-no-repeat bg-top bg-contain">
-            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://library.darakhtdanesh.org/{{ potential_query_string }}'" type="button">{{ _("DD Library") }}</button></div>
-            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org'" type="button">{{ _("DD Courses") }}</button></div>
-            <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org/course/index.php?categoryid=7'" type="button">{{ _("DD Classroom") }}</button></div>
-            <div class="bg-academi-tree bg-gradient-to-br"></div>
-        </main>
-        <footer class="md:hidden">
-            <div class="-mt-16 border-t-2 text-center border-duron-mindful-gray bg-very-light-shade-of-orange">
-                <div class="mt-1 mb-1">
-                    <a href="https://cw4wafghan.ca" target="_blank">
-                        <img class="h-14 w-48 inline me-2" src="{{url_for('static',filename='media/cw4wafghan-logo.png')}}" alt="CW4WAfghan logo">
-                    </a>
-                </div>
-            </div>
-        </footer>
-        <div class="hidden md:flex flex-col 2xl:h-fit">
-            <div class="text-end">
-                <button id="dropdownDesktopLanguage" data-dropdown-toggle="dropdown" class="text-white bg-shade-of-brown hover:bg-different-shade-of-brown font-medium rounded-lg text-sm justify-center px-2 py-2.5 mt-4 me-2 text-center inline-flex items-center" type="button">{% if g.locale == 'en' %}English{% elif g.locale == 'fa' %}فارسی{% else %}پښتو{% endif %} <svg class="ms-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-            </div>
-            <!-- Dropdown menu -->
-            <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
-                <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefault">
-                  <li class="{% if g.locale == 'en' %}hidden{% endif %}">
-                    <a href="{{ url_for('ddlanding', lang='en') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">English</a>
-                  </li>
-                  <li class="{% if g.locale == 'fa' %}hidden{% endif %}">
-                    <a href="{{ url_for('ddlanding', lang='fa') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">فارسی</a>
-                  </li>
-                  <li class="{% if g.locale == 'ps' %}hidden{% endif %}">
-                    <a href="{{ url_for('ddlanding', lang='ps') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">پښتو</a>
-                  </li>
-                </ul>
-            </div>
-            <main class="relative h-[600px] mt-[15px] 2xl:mt-[75px] text-center">
-                <img class="w-[388px] h-auto inline z-0" src="{{url_for('static',filename='media/circle.png')}}" alt="DDLanding - circle">
-                <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:left-0 ltr:right-[230px] rtl:right-0 rtl:left-[230px] z-30 mt-[150px]" onclick="location.href='https://library.darakhtdanesh.org/{{ potential_query_string }}'" type="button">{{ _("DD Library") }}</button>
-                <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-0 z-30 mt-[100px]" onclick="location.href='https://courses.darakhtdanesh.org'" type="button">{{ _("DD Courses") }}</button>
-                <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:right-0 ltr:left-[230px] rtl:left-0 rtl:right-[230px] z-30 mt-[150px]" onclick="location.href='https://courses.darakhtdanesh.org/course/index.php?categoryid=7'" type="button">{{ _("DD Classroom") }}</button>
-                <img class="w-[360px] h-auto mt-[100px] inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/ddl-logo-tree.png')}}" alt="DDLanding - tree">
-            </main>
+    </div>
+</div>
+<main class="md:hidden bg-academi-tree h-screen bg-no-repeat bg-top bg-contain">
+    <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://library.darakhtdanesh.org/{{ potential_query_string }}'" type="button">{{ _("DD Library") }}</button></div>
+    <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org'" type="button">{{ _("DD Courses") }}</button></div>
+    <div class="text-center"><button class="rounded-lg w-[75%] mb-4 p-2 bg-different-shade-of-red hover:bg-shade-of-orange hover:scale-125 transition duration-500 text-white" onclick="location.href='https://courses.darakhtdanesh.org/course/index.php?categoryid=7'" type="button">{{ _("DD Classroom") }}</button></div>
+</main>
 
-            <footer class="">
-                <img class="" src="{{url_for('static',filename='media/bg.png')}}" alt="Background image" style="min-height: 250px;">
-                <div class="-mt-16 border-t-2 text-center border-duron-mindful-gray">
-                    <div class="mt-1 mb-1 divide-s-2 divide-duron-mindful-gray">
-                        <a href="https://cw4wafghan.ca" target="_blank">
-                            <img class="h-14 w-48 inline me-2" src="{{url_for('static',filename='media/cw4wafghan-logo.png')}}" alt="CW4WAfghan logo">
-                        </a>
-                        <div class="inline-block bottom-0">
-                            <span class="ms-2 font-sans text-xl"><a href="#">{{ _("Darakht-e Danesh Academi") }}</a></span>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </body>
-</html>
+<div class="hidden md:flex flex-col 2xl:h-fit">
+    <main class="relative h-[600px] mt-[15px] 2xl:mt-[75px] text-center">
+        <img class="w-[388px] h-auto inline z-0" src="{{url_for('static',filename='media/circle.png')}}" alt="DDLanding - circle">
+        <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:left-0 ltr:right-[230px] rtl:right-0 rtl:left-[230px] z-30 mt-[150px]" onclick="location.href='https://library.darakhtdanesh.org/{{ potential_query_string }}'" type="button">{{ _("DD Library") }}</button>
+        <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto left-0 right-0 z-30 mt-[100px]" onclick="location.href='https://courses.darakhtdanesh.org'" type="button">{{ _("DD Courses") }}</button>
+        <button class="w-[78px] h-[78px] rounded-full bg-shade-of-red hover:bg-shade-of-orange hover:scale-150 transition duration-500 text-white text-sm absolute h-auto mx-auto ltr:right-0 ltr:left-[230px] rtl:left-0 rtl:right-[230px] z-30 mt-[150px]" onclick="location.href='https://courses.darakhtdanesh.org/course/index.php?categoryid=7'" type="button">{{ _("DD Classroom") }}</button>
+        <img class="w-[360px] h-auto mt-[100px] inline absolute mx-auto left-0 right-0 z-10" src="{{url_for('static',filename='media/ddl-logo-tree.png')}}" alt="DDLanding - tree">
+    </main>
+</div>
+
+{% include 'footer.html' %}

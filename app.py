@@ -41,6 +41,22 @@ def ddlanding(lang=None):
         return response
 
 
+@app.route('/ddcourses/<string:lang>')
+def ddcourses(lang=None):
+    if lang and lang in app.config['LANGUAGES']:
+        session['lang'] = lang
+    g.locale = get_locale()
+    return render_template('portal.html')
+
+
+@app.route('/ddcourses/oruj/<string:lang>')
+def oruj(lang=None):
+    if lang and lang in app.config['LANGUAGES']:
+        session['lang'] = lang
+    g.locale = get_locale()
+    return render_template('oruj.html')
+
+
 @babel.localeselector
 def get_locale():
     if 'lang' in session:
