@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ _("Darakht-e Danesh Academi") }}</title>
+        <link rel="shortcut icon" href="{{url_for('static',filename='media/favicon.ico')}}" />
+        <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" integrity="sha512-b4Yv1rMC70hhGkMFwgqiSrvxecsfKDY2fv26lXsLZD0TYpUobohhs6he69Kk4NpM0xvaFDVkBYcNFh5/QSuTAg==" crossorigin="anonymous"></script>
+    </head>
+
+    <body dir="{% if g.locale == 'en' %}ltr{% else %}rtl{% endif %}" class="flex flex-col min-h-screen">
+        <header class="md:hidden block flex justify-center items-center bg-duron-mindful-gray py-2 text-center mb-8">
+            <div class="flex-1"></div>
+            <span class="inline-block font-sans text-xl"><a href="#">{{ _("Darakht-e Danesh Academi") }}</a></span>
+            <div class="text-end inline-block flex-1">
+                <button id="dropdownMobileLanguage" data-dropdown-toggle="dropdown1" class="text-white bg-shade-of-brown hover:bg-different-shade-of-brown rounded-lg px-1 py-1 me-2" type="button"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" aria-describedby="{{ _("Select language") }}" aria-disabled="true" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg></button>
+            </div>
+            <!-- Dropdown menu -->
+            <div id="dropdown1" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
+                <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefault">
+                  <li class="{% if g.locale == 'en' %}hidden{% endif %}">
+                    <a href="{{ url_for('ddlanding', lang='en') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">English</a>
+                  </li>
+                  <li class="{% if g.locale == 'fa' %}hidden{% endif %}">
+                    <a href="{{ url_for('ddlanding', lang='fa') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">فارسی</a>
+                  </li>
+                  <li class="{% if g.locale == 'ps' %}hidden{% endif %}">
+                    <a href="{{ url_for('ddlanding', lang='ps') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">پښتو</a>
+                  </li>
+                </ul>
+            </div>
+        </header>
+        <div class="hidden md:flex flex-col 2xl:h-fit">
+            <div class="text-end">
+                <button id="dropdownDesktopLanguage" data-dropdown-toggle="dropdown" class="text-white bg-shade-of-brown hover:bg-different-shade-of-brown font-medium rounded-lg text-sm justify-center px-2 py-2.5 mt-4 me-2 text-center inline-flex items-center" type="button">{% if g.locale == 'en' %}English{% elif g.locale == 'fa' %}فارسی{% else %}پښتو{% endif %} <svg class="ms-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+            </div>
+            <!-- Dropdown menu -->
+            <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
+                <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefault">
+                  <li class="{% if g.locale == 'en' %}hidden{% endif %}">
+                    <a href="{{ url_for(request.url_rule.endpoint, lang='en') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">English</a>
+                  </li>
+                  <li class="{% if g.locale == 'fa' %}hidden{% endif %}">
+                    <a href="{{ url_for(request.url_rule.endpoint, lang='fa') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">فارسی</a>
+                  </li>
+                  <li class="{% if g.locale == 'ps' %}hidden{% endif %}">
+                    <a href="{{ url_for(request.url_rule.endpoint, lang='ps') }}" class="block py-2 px-4 hover:bg-very-light-shade-of-orange">پښتو</a>
+                  </li>
+                </ul>
+            </div>
+        </div>
